@@ -162,6 +162,9 @@ pub mod stdlib {
 }
 
 #[macro_use]
+mod prefix;
+
+#[macro_use]
 mod system;
 
 #[cfg(feature = "si")]

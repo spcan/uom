@@ -4,9 +4,6 @@
 //! [si]: http://jcgm.bipm.org/vim/en/1.16.html
 //! [isq]: http://jcgm.bipm.org/vim/en/1.6.html
 
-#[macro_use]
-mod prefix;
-
 system! {
     /// [International System of Quantities](http://jcgm.bipm.org/vim/en/1.6.html) (ISQ).
     quantities: ISQ {
