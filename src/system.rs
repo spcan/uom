@@ -140,8 +140,8 @@ macro_rules! system {
         /// // Create a `const` length of 1 meter.
         /// const L: Length = Length { dimension: PhantomData, units: PhantomData, value: 1.0, };
         /// // Create a `const` area of 1 square meter explicitly without using the `Area` alias.
-        #[cfg_attr(feature = "f32", doc = " const A: Quantity<ISQ<P2, Z0, Z0, Z0, Z0, Z0, Z0>, SI<f32>, f32> =")]
-        #[cfg_attr(not(feature = "f32"), doc = " const A: Quantity<ISQ<P2, Z0, Z0, Z0, Z0, Z0, Z0>, SI<f64>, f64> =")]
+        #[cfg_attr(feature = "f32", doc = " const A: Quantity<ISQ<P2, Z0, Z0, Z0, Z0, Z0, Z0, Z0>, SI<f32>, f32> =")]
+        #[cfg_attr(not(feature = "f32"), doc = " const A: Quantity<ISQ<P2, Z0, Z0, Z0, Z0, Z0, Z0, Z0>, SI<f64>, f64> =")]
         ///     Quantity { dimension: PhantomData, units: PhantomData, value: 1.0, };
         /// ```
         ///

@@ -11,7 +11,8 @@ quantity! {
         Z0,     // electric current
         Z0,     // thermodynamic temperature
         Z0,     // amount of substance
-        Z0>;    // luminous intensity
+        Z0,     // luminous intensity
+        Z0>;    // information
     units {
         @yottahertz: prefix!(yotta); "YHz", "yottahertz", "yottahertz";
         @zettahertz: prefix!(zetta); "ZHz", "zettahertz", "zettahertz";

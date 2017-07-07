@@ -11,7 +11,8 @@ quantity! {
         Z0,     // electric current
         Z0,     // thermodynamic temperature
         P1,     // amount of substance
-        Z0>;    // luminous intensity
+        Z0,     // luminous intensity
+        Z0>;    // information
     units {
         @yottamole: prefix!(yotta); "Ymol", "yottamole", "yottamoles";
         @zettamole: prefix!(zetta); "Zmol", "zettamole", "zettamoles";

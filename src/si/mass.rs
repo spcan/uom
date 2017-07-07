@@ -11,7 +11,8 @@ quantity! {
         Z0,     // electric current
         Z0,     // thermodynamic temperature
         Z0,     // amount of substance
-        Z0>;    // luminous intensity
+        Z0,     // luminous intensity
+        Z0>;    // information
     units {
         @yottagram: prefix!(yotta) / prefix!(kilo); "Yg", "yottagram", "yottagrams";
         @zettagram: prefix!(zetta) / prefix!(kilo); "Zg", "zettagram", "zettagrams";

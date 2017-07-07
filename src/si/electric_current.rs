@@ -11,7 +11,8 @@ quantity! {
         P1,     // electric current
         Z0,     // thermodynamic temperature
         Z0,     // amount of substance
-        Z0>;    // luminous intensity
+        Z0,     // luminous intensity
+        Z0>;    // information
     units {
         @yottaampere: prefix!(yotta); "YA", "yottaampere", "yottaamperes";
         @zettaampere: prefix!(zetta); "ZA", "zettaampere", "zettaamperes";

@@ -11,7 +11,8 @@ quantity! {
         Z0,     // electric current
         Z0,     // thermodynamic temperature
         Z0,     // amount of substance
-        Z0>;    // luminous intensity
+        Z0,     // luminous intensity
+        Z0>;    // information
     units {
         @yottanewton: prefix!(yotta); "YN", "yottanewton", "yottanewtons";
         @zettanewton: prefix!(zetta); "ZN", "zettanewton", "zettanewtons";

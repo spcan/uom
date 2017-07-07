@@ -14,6 +14,7 @@ system! {
         thermodynamic_temperature: kelvin, Th;
         amount_of_substance: mole, N;
         luminous_intensity: candela, J;
+        information: bit, In;
     }
 
     /// [International System of Units](http://jcgm.bipm.org/vim/en/1.16.html) (SI).
@@ -24,6 +25,7 @@ system! {
         electric_current::ElectricCurrent,
         force::Force,
         frequency::Frequency,
+        information::Information,
         length::Length,
         luminous_intensity::LuminousIntensity,
         mass::Mass,

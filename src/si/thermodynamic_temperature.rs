@@ -11,7 +11,8 @@ quantity! {
         Z0,     // electric current
         P1,     // thermodynamic temperature
         Z0,     // amount of substance
-        Z0>;    // luminous intensity
+        Z0,     // luminous intensity
+        Z0>;    // information
     units {
         @yottakelvin: prefix!(yotta); "YK", "yottakelvin", "yottakelvins";
         @zettakelvin: prefix!(zetta); "ZK", "zettakelvin", "zettakelvins";
