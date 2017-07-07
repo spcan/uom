@@ -26,7 +26,8 @@ quickcheck = "0.4.1"
 approx = "0.1.1"
 
 [features]
-default = ["f32", "f64", "si", "std"]
+default = ["data", "f32", "f64", "si", "std"]
+data = []
 f32 = []
 f64 = []
 si = []

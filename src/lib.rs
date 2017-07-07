@@ -51,15 +51,18 @@
 //! type aliases for a different set of base units and how to create an entirely new system.
 //!
 //! ## Features
-//! `uom` has four `Cargo` features: `f32`, `f64`, `si`, and `std`. The features are described below
-//! and are enabled by default. Features can be cherry-picked by using the `--no-default-features`
-//! and `--features "..."` flags when compiling `uom` or specifying features in Cargo.toml:
+//! `uom` has five `Cargo` features: `data`, `f32`, `f64`, `si`, and `std`. The features are
+//! described below and are enabled by default. Features can be cherry-picked by using the
+//! `--no-default-features` and `--features "..."` flags when compiling `uom` or specifying features
+//! in Cargo.toml:
 //!
 //! ```toml
 //! [dependencies]
-//! uom = { version = "0.15.0", default-features = false, features = ["f32", "f64", "si", "std"] }
+//! uom = { version = "0.15.0", default-features = false, features = ["data", "f32", "f64", "si", "std"] }
 //! ```
 //!
+//!  * `data` -- Feature to include the pre-build data system that includes a single quantity,
+//!    information (bytes).
 //!  * `f32`, `f64` -- Features to enable underlying storage types. At least one of these features
 //!    must be enabled.
 //!  * `si` -- Feature to include the pre-built [International System of Units][si] (SI).
@@ -166,6 +169,10 @@ mod prefix;
 
 #[macro_use]
 mod system;
+
+#[cfg(feature = "data")]
+#[macro_use]
+pub mod data;
 
 #[cfg(feature = "si")]
 #[macro_use]
