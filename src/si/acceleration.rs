@@ -100,10 +100,12 @@ mod tests {
 
             // TODO #17 Convert to == once PartialEq is implemented.
             fn test<L: l::Conversion<V>, A: a::Conversion<V>>(_l: L, a: A) {
-                Test::assert_eq(&V::one(),
-                    &(Length::new::<L>(V::one()) /
-                        (Time::new::<t::second>(V::one()) * Time::new::<t::second>(V::one())))
-                            .get(a));
+                if A::is_valid() {
+                    Test::assert_eq(&V::one(),
+                        &(Length::new::<L>(V::one()) /
+                            (Time::new::<t::second>(V::one()) * Time::new::<t::second>(V::one())))
+                                .get(a));
+                }
             }
         }
     }

@@ -79,10 +79,15 @@ mod tests {
 
             // TODO #17 Convert to == once PartialEq is implemented.
             fn test<T: t::Conversion<V>, F: f::Conversion<V>>(t: T, f: F) {
-                Test::assert_approx_eq(&(V::one() / Time::new::<T>(V::one())).get(f),
-                    &Frequency::new::<F>(V::one()).get(f));
-                Test::assert_approx_eq(&Time::new::<T>(V::one()).get(t),
-                    &(V::one() / Frequency::new::<F>(V::one())).get(t));
+                if T::is_valid() {
+                    Test::assert_approx_eq(&(V::one() / Time::new::<T>(V::one())).get(f),
+                        &Frequency::new::<F>(V::one()).get(f));
+                }
+
+                if F::is_valid() {
+                    Test::assert_approx_eq(&Time::new::<T>(V::one()).get(t),
+                        &(V::one() / Frequency::new::<F>(V::one())).get(t));
+                }
             }
         }
     }

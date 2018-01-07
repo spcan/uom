@@ -61,7 +61,6 @@ quantity! {
 #[cfg(test)]
 mod tests {
     storage_types! {
-        use lib::any::TypeId;
         use num::One;
         use si::quantities::*;
         use si::area as a;
@@ -75,12 +74,8 @@ mod tests {
 
         #[test]
         fn check_units() {
-            // Values too large for f32.
-            if TypeId::of::<f64>() == TypeId::of::<V>() {
-                test(l::yottameter, a::square_yottameter);
-                test(l::zettameter, a::square_zettameter);
-            }
-
+            test(l::yottameter, a::square_yottameter);
+            test(l::zettameter, a::square_zettameter);
             test(l::exameter, a::square_exameter);
             test(l::petameter, a::square_petameter);
             test(l::terameter, a::square_terameter);
@@ -99,16 +94,14 @@ mod tests {
             test(l::femtometer, a::square_femtometer);
             test(l::attometer, a::square_attometer);
             test(l::zeptometer, a::square_zeptometer);
-
-            // Values too small for f32.
-            if TypeId::of::<f64>() == TypeId::of::<V>() {
-                test(l::yoctometer, a::square_yoctometer);
-            }
+            test(l::yoctometer, a::square_yoctometer);
 
             // TODO #17 Convert to == once PartialEq is implemented.
             fn test<L: l::Conversion<V>, A: a::Conversion<V>>(_l: L, a: A) {
-                Test::assert_eq(&V::one(),
-                    &(Length::new::<L>(V::one()) * Length::new::<L>(V::one())).get(a));
+                if A::is_valid() {
+                    Test::assert_eq(&V::one(),
+                        &(Length::new::<L>(V::one()) * Length::new::<L>(V::one())).get(a));
+                }
             }
         }
     }

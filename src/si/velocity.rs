@@ -99,8 +99,10 @@ mod test {
 
             // TODO #17 Convert to == once PartialEq is implemented.
             fn test<L: l::Conversion<V>, E: v::Conversion<V>>(_l: L, v: E) {
-                Test::assert_eq(&V::one(),
-                    &(Length::new::<L>(V::one()) / Time::new::<t::second>(V::one())).get(v));
+                if E::is_valid() {
+                    Test::assert_eq(&V::one(),
+                        &(Length::new::<L>(V::one()) / Time::new::<t::second>(V::one())).get(v));
+                }
             }
         }
     }

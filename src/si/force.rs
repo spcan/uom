@@ -120,9 +120,11 @@ mod tests {
                 _t: T,
                 f: F
             ) {
-                Test::assert_approx_eq(&V::one(), &((Mass::new::<M>(V::one())
-                        * Length::new::<L>(V::one()))
-                        / (Time::new::<T>(V::one()) * Time::new::<T>(V::one()))).get(f));
+                if F::is_valid() && T::is_valid() {
+                    Test::assert_approx_eq(&V::one(), &((Mass::new::<M>(V::one())
+                            * Length::new::<L>(V::one()))
+                            / (Time::new::<T>(V::one()) * Time::new::<T>(V::one()))).get(f));
+                }
             }
         }
     }
