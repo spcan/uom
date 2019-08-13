@@ -291,7 +291,7 @@ mod fmt {
 #[cfg(feature = "autoconvert")]
 mod non_big {
     storage_types! {
-        types: Float, PrimInt, Rational, Rational32, Rational64;
+        types: Float, PrimInt, Rational, Rational32, Rational64, Rational128;
 
         use tests::*;
 
