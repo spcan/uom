@@ -9,6 +9,7 @@ pub(crate) use expand::expand;
 
 /// System definition. TODO: Remove `allow(dead_code)` once parsing/expansion implemented.
 #[allow(dead_code)]
+#[cfg_attr(feature = "extra-traits", derive(Debug))]
 pub(crate) struct System {
     name_attributes: Vec<Attribute>,
     name: Ident,
@@ -20,6 +21,7 @@ pub(crate) struct System {
 
 /// Base quantity definition. TODO: Remove `allow(dead_code)` once parsing/expansion implemented.
 #[allow(dead_code)]
+#[cfg_attr(feature = "extra-traits", derive(Debug))]
 pub(crate) struct BaseQuantity {
     attributes: Vec<Attribute>,
     name: Ident,
@@ -29,6 +31,7 @@ pub(crate) struct BaseQuantity {
 /// Quantity reference defintion. TODO: Remove `allow(dead_code)` once parsing/expansion
 /// implemented.
 #[allow(dead_code)]
+#[cfg_attr(feature = "extra-traits", derive(Debug))]
 pub(crate) struct Quantity {
     add_mod: bool,
     module: Path,

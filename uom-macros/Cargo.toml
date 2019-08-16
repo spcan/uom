@@ -30,3 +30,5 @@ syn = { version = "1.0", default-features = false, features = ["derive", "parsin
 uom = { version = "*", path = ".." }
 
 [features]
+default = []
+extra-traits = ["syn/extra-traits"]
